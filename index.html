@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="notes">
+
+  <head>
+    <link href="custom.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+
+  <body>
+    <header>
+      <h1>Notes List</h1>
+    </header>
+    <main ng-controller="mainController">
+      <ul>
+        <li ng-repeat="note in notes">
+          <textarea ng-show="note.editing" ng-model="note.text" placeholder="Add note text" maxlength="200">
+            {{ note.text }}
+          </textarea>
+          <div ng-show="!note.editing">{{ note.text }}</div>
+          <div class=buttons>
+            <button ng-click="removeNote(note)"><i class="material-icons">close</i></button>
+            <button ng-click="editNote(note)">
+              <i ng-show="!note.editing" class="material-icons">edit</i>
+              <i ng-show="note.editing" class="material-icons">save</i>
+            </button>
+          </div>
+        </li>
+        <li><button ng-click="addNote()" title="add note"  class="add"><i class="material-icons">add_circle</i></button></li>
+      </ul>
+    </main>
+  </body>
+
+
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js"></script>
+  <script src="app.js"></script>
+
+</html>

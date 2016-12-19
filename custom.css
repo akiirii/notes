@@ -1,0 +1,108 @@
+html{
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background: linear-gradient(90deg, #b6eae1 10%, #45c6bf 90%);
+  opacity: 0.95;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0 50px;
+}
+
+header {
+  background-color: #fff;
+  box-shadow: 2px 2px 5px #225a62;
+  height: 75px;
+  width: 100%;
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+}
+
+h1 {
+  padding-left: 20px;
+}
+
+.buttons {
+  align-self: flex-end;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+}
+
+button:hover {
+  color: #45c6bf;
+  transition: color 0.5s;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 0;
+}
+
+ul li:not(:last-of-type) {
+  background-color: #fff;
+  min-height: 100px;
+  width: 200px;
+  box-shadow: 2px 2px 5px #225a62;
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+textarea {
+  width: 100%;
+  height: 100%;
+  resize: none;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+}
+
+button.add {
+  color: #e8f2f1;
+}
+
+button.add:hover i {
+  color: #fff;
+}
+
+.add i {
+  font-size: 48px;
+}
+
+@media screen and (max-width: 550px) {
+  ul li:not(:last-of-type) {
+    width: 100%;
+  }
+  main {
+    margin: 0 10px;
+  }
+}
+@media screen and (min-width: 550px) {
+  ul li:not(:last-of-type) {
+    width: 40%;
+  }
+}
+@media screen and (min-width: 768px) {
+  ul li:not(:last-of-type) {
+    width: 200px;
+  }
+}
